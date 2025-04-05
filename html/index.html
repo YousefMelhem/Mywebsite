@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header with navigation that appears on hover -->
+    <header id="header">
+        <nav>
+            <a href="https://github.com/YousefMelhem" target="_blank">GitHub</a>
+            <a href="path-to-your-cv.pdf" target="_blank">CV</a>
+            <button onclick="changePage('courses')" class="nav-btn">Courses</button>
+            <button onclick="changePage('projects')" class="nav-btn">Projects</button>
+            <button onclick="changePage('contact')" class="nav-btn">Contact</button>
+        </nav>
+    </header>
+
+    <!-- Home button (always visible except on home page) -->
+    <div id="home-button">
+        <button onclick="changePage('home')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main section - visible by default -->
+    <main id="home" class="page active">
+        <div class="container">
+            <div class="profile-image-container">
+                <img src="../images/profile.jpeg" alt="Your Profile Picture" class="profile-image">
+            </div>
+            <h1>Hello, I'm Your Name</h1>
+            <p class="subtitle">Web Developer & Designer</p>
+            <button onclick="changePage('projects')" class="btn">View My Work</button>
+        </div>
+    </main>
+
+    <!-- Projects section -->
+    <section id="projects" class="page">
+        <div class="container">
+            <h2>My Projects</h2>
+            
+            <div class="project">
+                <img src="/api/placeholder/400/300" alt="GitHub Profile" class="project-img">
+                <h3>GitHub Projects</h3>
+                <p>Check out all my projects and repositories on GitHub.</p>
+                <a href="https://github.com/YousefMelhem" target="_blank" class="github-link">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses section -->
+    <section id="courses" class="page">
+        <div class="container">
+            <h2>Academic Courses</h2>
+            <h3>Year 1 (2021)</h3>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1TD306 - 7.5hp<br>Linjär algebra</td>
+                        <td>1MA011 - 7.5hp<br>Diskret matematik</td>
+                        <td>1DL201 - 10hp<br>Programmeringsmetodik</td>
+                        <td>1TD396 - 7.5hp<br>Tillämpad datastruktur</td>
+                    </tr>
+                    <tr>
+                        <td>1DT304 - 7.5hp<br>Imperativ programmering</td>
+                        <td>1DT052 - 7.5hp<br>Introduktionskurs projekt</td>
+                        <td>1DL300 - 5hp<br>Databaser och webappar</td>
+                        <td>1DT046 - 7.5hp<br>Metodik</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Year 2 (2022)</h3>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1DL305<br>Objektorienterad design</td>
+                        <td>1TD945 - 5hp<br>Teknik kommunikation</td>
+                        <td>1DT902 - 5hp<br>Editor utveckling</td>
+                        <td>1MA030 - 7.5hp<br>Numeriska metoder</td>
+                    </tr>
+                    <tr>
+                        <td>1TP302<br>Effektiv programmering</td>
+                        <td>1DT907 - 5hp<br>Metodik</td>
+                        <td>1DT300 - 5hp<br>Mjukvarukvalitetsprojekt</td>
+                        <td>2DT301 - 7.5hp<br>Datorteknik självständigt</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1DT802<br>Mjukvaruutvecklingsprojekt</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Year 3 (2023)</h3>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1TD318 - 5hp<br>Datakommunikation</td>
+                        <td>1DT907 - 5hp<br>Metodik</td>
+                        <td>??? - 5hp<br>Interaktiv design</td>
+                        <td>??? - 15hp<br>Självständigt arbete</td>
+                    </tr>
+                    <tr>
+                        <td>2DT902 - 5hp<br>Mjukvaruarkitektur</td>
+                        <td>2DT904 - 5hp<br>Designgrafik</td>
+                        <td>??? - 5hp<br>Vetenskapligt</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2DT903 - 5hp<br>Inbäddade system</td>
+                        <td>2DT905 - 5hp<br>Testprojekt</td>
+                        <td>??? - 5hp<br>Projektledning</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Year 4 (2024)</h3>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>??? - 5hp<br>Systemmodellering och abstraktion</td>
+                        <td>??? - 5hp<br>Formella metoder</td>
+                        <td>??? - 5hp<br>Maskininlärning</td>
+                        <td>??? - 7.5hp<br>Ship maskininlärning</td>
+                    </tr>
+                    <tr>
+                        <td>??? - 5hp<br>Kodtransformationer och optimering</td>
+                        <td>??? - 5hp<br>Optimering</td>
+                        <td>??? - 5hp<br>Parallell och distribuerad programmering</td>
+                        <td>??? - 7.5hp<br>Lean startup</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>??? - 5hp<br>Människa datorinteraktiva system</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Year 5 (2025)</h3>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>??? - 5hp<br>Informationsvisualisering</td>
+                        <td>??? - 5hp<br>Vetenskapliga metoder</td>
+                        <td>??? - 30hp<br>Självständigt arbete</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>??? - 5hp<br>Digitalisering</td>
+                        <td>??? - 5hp<br>Avancerad informationsvisualisering och inlämningar</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>??? - 10hp<br>Projekt i visualisering och dataanalys</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="page">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Feel free to contact me for any work or suggestions.</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/scripte.js"></script>
+</body>
+</html>
