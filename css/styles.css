@@ -240,12 +240,8 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Added semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center; /* Center the content */
 }
 
 .project:hover {
@@ -254,10 +250,14 @@ h2 {
 }
 
 .project-img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+  width: 300px; /* Fixed width instead of 100% */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 8px;
   margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project h3 {
@@ -377,6 +377,12 @@ h2 {
   .project {
     padding: 15px;
     margin-top: 20px;
+  }
+
+  .project-img {
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* But not larger than 300px */
+    height: 180px; /* Slightly smaller height on mobile */
   }
 
   table {
