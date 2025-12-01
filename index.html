@@ -3,20 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta name="description" content="Yousef Melhem - Software Engineering Master's Student specializing in Machine Learning and Data-Intensive Systems" />
+    <meta name="keywords" content="Software Engineer, Machine Learning, Portfolio, Web Development" />
+    <meta name="author" content="Yousef Melhem" />
+    <title>Yousef Melhem | Software Engineer Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <!-- Dark mode toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+
     <!-- Header with navigation that appears on hover -->
     <header id="header">
       <nav>
+        <button onclick="changePage('home')" class="nav-btn">Home</button>
+        <button onclick="changePage('about')" class="nav-btn">About</button>
+        <button onclick="changePage('projects')" class="nav-btn">Projects</button>
+        <button onclick="changePage('courses')" class="nav-btn">Courses</button>
+        <button onclick="changePage('contact')" class="nav-btn">Contact</button>
         <a href="https://github.com/YousefMelhem" target="_blank">GitHub</a>
         <a href="images/CV.pdf" target="_blank">CV</a>
-        <button onclick="changePage('courses')" class="nav-btn">Courses</button>
-        <button onclick="changePage('projects')" class="nav-btn">
-          Projects
-        </button>
-        <button onclick="changePage('contact')" class="nav-btn">Contact</button>
       </nav>
     </header>
 
@@ -42,43 +63,171 @@
 
     <!-- Main section - visible by default -->
     <main id="home" class="page active">
-      <div class="container">
+      <div class="container hero-container">
         <div class="profile-image-container">
           <img
             src="images/profile.jpeg"
-            alt="Your Profile Picture"
+            alt="Yousef Melhem Profile Picture"
             class="profile-image"
+            loading="eager"
           />
         </div>
-        <h1>Hello, I'm Yousef Melhem</h1>
-        <p class="subtitle">
+        <h1 class="animate-text">Hello, I'm <span class="highlight">Yousef Melhem</span></h1>
+        <p class="subtitle animate-text">
           Master of Science in Engineering: Software Engineering
         </p>
-        <button onclick="changePage('projects')" class="btn">
-          View My Work
-        </button>
+        <p class="tagline animate-text">Specializing in Machine Learning & Data-Intensive Systems</p>
+        <div class="hero-buttons animate-text">
+          <button onclick="changePage('projects')" class="btn btn-primary">View My Work</button>
+          <button onclick="changePage('contact')" class="btn btn-secondary">Get In Touch</button>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/YousefMelhem" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/yousef-thamer-mohammad-540693290" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:ym222cx@student.lnu.se" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
     </main>
+
+    <!-- About section -->
+    <section id="about" class="page">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a Software Engineering Master's student at Linnaeus University, passionate about creating innovative solutions using cutting-edge technologies.</p>
+            <p>My expertise lies in Machine Learning, Data-Intensive Systems, and Full-Stack Development. I enjoy tackling complex problems and transforming ideas into reality through code.</p>
+          </div>
+          
+          <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Languages</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">C++</span>
+                  <span class="skill-tag">SQL</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Frameworks & Tools</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">TensorFlow</span>
+                  <span class="skill-tag">PyTorch</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Git</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Specializations</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Machine Learning</span>
+                  <span class="skill-tag">Deep Learning</span>
+                  <span class="skill-tag">Data Visualization</span>
+                  <span class="skill-tag">Parallel Computing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Projects section -->
     <section id="projects" class="page">
       <div class="container">
-        <h2>My Projects</h2>
+        <h2 class="section-title">My Projects</h2>
+        
+        <div class="projects-grid">
+          <!-- Project Card Template - Replace with your actual projects -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/profile.jpeg" alt="Project 1" loading="lazy" />
+              <div class="project-overlay">
+                <a href="https://github.com/YousefMelhem" target="_blank" class="project-link">View Code</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Machine Learning Project</h3>
+              <p>Advanced ML system for data classification using deep learning techniques.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">ML</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="project">
-          <img
-            src="images/profile.jpeg"
-            alt="GitHub Profile"
-            class="project-img"
-          />
-          <h3>GitHub Projects</h3>
-          <p>Check out all my projects and repositories on GitHub.</p>
-          <a
-            href="https://github.com/YousefMelhem"
-            target="_blank"
-            class="github-link"
-            >View on GitHub</a
-          >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/profile.jpeg" alt="Project 2" loading="lazy" />
+              <div class="project-overlay">
+                <a href="https://github.com/YousefMelhem" target="_blank" class="project-link">View Code</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Data Visualization Dashboard</h3>
+              <p>Interactive dashboard for real-time data analysis and visualization.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">React</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="images/profile.jpeg" alt="Project 3" loading="lazy" />
+              <div class="project-overlay">
+                <a href="https://github.com/YousefMelhem" target="_blank" class="project-link">View Code</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Distributed Systems Project</h3>
+              <p>Scalable distributed system for parallel data processing.</p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Distributed</span>
+                <span class="tag">Big Data</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GitHub Profile Card -->
+          <div class="project-card featured">
+            <div class="project-image">
+              <img src="images/profile.jpeg" alt="GitHub Profile" loading="lazy" />
+              <div class="project-overlay">
+                <a href="https://github.com/YousefMelhem" target="_blank" class="project-link">View GitHub</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>All GitHub Projects</h3>
+              <p>Explore my complete collection of open-source projects, contributions, and code repositories.</p>
+              <div class="project-tags">
+                <span class="tag">Open Source</span>
+                <span class="tag">Various Tech</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -86,8 +235,8 @@
     <!-- Courses section -->
     <section id="courses" class="page">
       <div class="container">
-        <h2>Academic Courses</h2>
-
+        <h2 class="section-title">Academic Journey</h2>
+        
         <h3>Year 1 (2021)</h3>
         <table class="course-table">
           <thead>
@@ -255,16 +404,52 @@
     <!-- Contact section -->
     <section id="contact" class="page">
       <div class="container">
-        <h2>Contact</h2>
-        <p>Feel free to contact me for any work or suggestions.</p>
-        <div class="contact-links">
-          <a href="mailto:ym222cx@student.lnu.se" class="btn">Email Me</a>
-          <a
-            href="https://www.linkedin.com/in/yousef-thamer-mohammad-540693290"
-            target="_blank"
-            class="btn"
-            >LinkedIn</a
-          >
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-intro">Feel free to reach out for collaborations, opportunities, or just a friendly chat!</p>
+        
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:ym222cx@student.lnu.se">ym222cx@student.lnu.se</a>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <a href="https://www.linkedin.com/in/yousef-thamer-mohammad-540693290" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <a href="https://github.com/YousefMelhem" target="_blank">GitHub Profile</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
