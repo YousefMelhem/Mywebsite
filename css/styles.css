@@ -1,5 +1,5 @@
 /* ============================================================
-   Neural Network Space Theme
+   Neural Network Space Theme - Scroll Layout
    Portfolio - Yousef Melhem
    ============================================================ */
 
@@ -14,7 +14,6 @@
   --bg-deep: #030014;
   --bg-glass: rgba(255, 255, 255, 0.03);
   --bg-glass-hover: rgba(255, 255, 255, 0.07);
-  --bg-glass-strong: rgba(255, 255, 255, 0.06);
 
   --border-glass: rgba(255, 255, 255, 0.08);
   --border-glow: rgba(99, 102, 241, 0.4);
@@ -90,159 +89,161 @@ body {
 }
 
 /* ============================================================
-   Header / Navigation
+   Side Dot Navigation
    ============================================================ */
-#header {
+#dot-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 100;
-  background: rgba(3, 0, 20, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-glass);
-  padding: 0.75rem 0;
-  transition: background 0.3s ease;
-}
-
-#header:hover {
-  background: rgba(3, 0, 20, 0.85);
-}
-
-#header nav {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.dot-link {
+  display: flex;
   align-items: center;
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  flex-wrap: wrap;
-}
-
-#header nav a,
-#header nav .nav-btn {
-  color: var(--text-secondary);
+  gap: 12px;
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 0.95rem;
-  position: relative;
-  letter-spacing: 0.02em;
+  flex-direction: row-reverse;
 }
 
-#header nav a::after,
-#header nav .nav-btn::after {
+/* The dot */
+.dot-link::after {
   content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-primary);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  transform: translateX(-50%);
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  flex-shrink: 0;
 }
 
-#header nav a:hover::after,
-#header nav .nav-btn:hover::after,
-#header nav .nav-btn.active::after {
-  width: 80%;
+.dot-link:hover::after {
+  background: rgba(99, 102, 241, 0.5);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  transform: scale(1.2);
 }
 
-#header nav a:hover,
-#header nav .nav-btn:hover,
-#header nav .nav-btn.active {
-  color: var(--text-bright);
+.dot-link.active::after {
+  background: var(--primary);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  width: 14px;
+  height: 14px;
+}
+
+/* The label */
+.dot-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.dot-link:hover .dot-label {
+  color: var(--text-secondary);
+}
+
+.dot-link.active .dot-label {
+  color: var(--primary-light);
 }
 
 /* ============================================================
-   Home Button
+   Quick Links (GitHub + CV)
    ============================================================ */
-#home-button {
+#quick-links {
   position: fixed;
   bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  right: 28px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-#home-button.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-#home-button button {
-  background: rgba(99, 102, 241, 0.15);
+#quick-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: var(--primary-light);
-  border: 1px solid var(--border-glow);
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
   transition: all 0.3s ease;
+}
+
+#quick-links a:hover {
+  color: var(--primary-light);
+  border-color: var(--border-glow);
   box-shadow: var(--glow-sm);
-}
-
-#home-button button:hover {
-  transform: translateY(-4px);
-  background: rgba(99, 102, 241, 0.25);
-  box-shadow: var(--glow-md);
-  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
-   Container
+   Sections (scroll layout)
    ============================================================ */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5rem 2rem 4rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* ============================================================
-   Page Transitions
-   ============================================================ */
-.page {
-  display: none;
+.section {
   min-height: 100vh;
   position: relative;
   z-index: 1;
 }
 
-.page.active {
-  display: block;
-  animation: pageReveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes pageReveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+/* ============================================================
+   Scroll Reveal Animations
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.5s; }
+
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================================
@@ -264,7 +265,6 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Glow ring behind profile image */
 .profile-image-container::before {
   content: '';
   position: absolute;
@@ -362,6 +362,38 @@ h1 {
   }
 }
 
+/* Scroll indicator at bottom of hero */
+.hero-container::after {
+  content: '';
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  bottom: 2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--primary-light);
+  border-radius: 2px;
+  animation: scrollDot 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes scrollDot {
+  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
+}
+
 /* ============================================================
    Buttons
    ============================================================ */
@@ -384,6 +416,7 @@ h1 {
   text-decoration: none;
   display: inline-block;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .btn-primary {
@@ -858,80 +891,11 @@ h1 {
 }
 
 /* ============================================================
-   Stagger Reveal Animations
-   ============================================================ */
-.page.active .project-card,
-.page.active .skill-category,
-.page.active .course-table,
-.page.active .contact-item,
-.page.active .about-text,
-.page.active .contact-form,
-.page.active .contact-info,
-.page.active .skills-section {
-  opacity: 0;
-  animation: revealUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes revealUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Project cards stagger */
-.page.active .project-card:nth-child(1) { animation-delay: 0.15s; }
-.page.active .project-card:nth-child(2) { animation-delay: 0.25s; }
-.page.active .project-card:nth-child(3) { animation-delay: 0.35s; }
-.page.active .project-card:nth-child(4) { animation-delay: 0.45s; }
-
-/* Skill categories stagger */
-.page.active .skill-category:nth-child(1) { animation-delay: 0.2s; }
-.page.active .skill-category:nth-child(2) { animation-delay: 0.3s; }
-.page.active .skill-category:nth-child(3) { animation-delay: 0.4s; }
-
-/* Course tables stagger */
-.page.active .course-table:nth-of-type(1) { animation-delay: 0.1s; }
-.page.active .course-table:nth-of-type(2) { animation-delay: 0.2s; }
-.page.active .course-table:nth-of-type(3) { animation-delay: 0.3s; }
-.page.active .course-table:nth-of-type(4) { animation-delay: 0.4s; }
-.page.active .course-table:nth-of-type(5) { animation-delay: 0.5s; }
-
-/* Contact stagger */
-.page.active .contact-info { animation-delay: 0.15s; }
-.page.active .contact-form { animation-delay: 0.3s; }
-.page.active .contact-item:nth-child(2) { animation-delay: 0.2s; }
-.page.active .contact-item:nth-child(3) { animation-delay: 0.25s; }
-.page.active .contact-item:nth-child(4) { animation-delay: 0.3s; }
-
-/* About stagger */
-.page.active .about-text { animation-delay: 0.15s; }
-.page.active .skills-section { animation-delay: 0.3s; }
-
-/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 768px) {
-  #header {
-    padding: 0.5rem 0;
-  }
-
-  #header nav {
-    gap: 0.3rem;
-  }
-
-  #header nav a,
-  #header nav .nav-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-  }
-
   .container {
-    padding: 4.5rem 1.25rem 3rem;
+    padding: 4rem 1.25rem;
   }
 
   .profile-image {
@@ -973,21 +937,41 @@ h1 {
   #courses h3 {
     font-size: 1.25rem;
   }
+
+  /* Dot nav: smaller, tighter */
+  #dot-nav {
+    right: 15px;
+    gap: 14px;
+  }
+
+  .dot-link::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot-link.active::after {
+    width: 12px;
+    height: 12px;
+  }
+
+  .dot-label {
+    display: none;
+  }
+
+  #quick-links {
+    right: 13px;
+    bottom: 20px;
+  }
+
+  #quick-links a {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 4rem 0.75rem 2rem;
-  }
-
-  #home-button button {
-    width: 48px;
-    height: 48px;
-  }
-
-  #home-button {
-    bottom: 20px;
-    right: 20px;
+    padding: 3rem 0.75rem;
   }
 
   .section-title {
