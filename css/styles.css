@@ -291,8 +291,8 @@ body {
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(99, 102, 241, 0.5);
@@ -716,61 +716,105 @@ h1 {
 }
 
 /* ============================================================
-   Courses
+   Education & Courses
    ============================================================ */
-#courses h3 {
-  font-size: 1.5rem;
-  margin: 3rem 0 1rem;
-  color: var(--primary-light);
+.education-overview {
+  margin: 2rem 0 3rem;
 }
 
-.course-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 1.5rem 0;
+.degree {
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
-  overflow: hidden;
   border: 1px solid var(--border-glass);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.course-table:hover {
-  border-color: rgba(99, 102, 241, 0.2);
+.degree:hover {
+  border-color: rgba(99, 102, 241, 0.3);
   box-shadow: var(--glow-sm);
+  transform: translateY(-2px);
 }
 
-.course-table thead {
-  background: rgba(99, 102, 241, 0.15);
+.degree h3 {
+  color: var(--text-bright);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
-.course-table th {
+.degree .institution {
   color: var(--primary-light);
-  font-weight: 600;
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border-glass);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.degree .focus {
+  color: var(--text-secondary);
+  font-style: italic;
   font-size: 0.95rem;
 }
 
-.course-table td {
-  padding: 0.9rem 1rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.course-category {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.course-category:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--glow-sm);
+  transform: translateY(-3px);
+}
+
+.course-category h4 {
+  color: var(--primary-light);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.course-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-category li {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.course-category li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
-.course-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.course-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.02);
+.course-category li:hover {
+  color: var(--text-bright);
 }
 
 /* ============================================================
@@ -899,8 +943,8 @@ h1 {
   }
 
   .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 
   .hero-buttons {
@@ -925,17 +969,16 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .course-table {
-    font-size: 0.8rem;
+  .courses-grid {
+    grid-template-columns: 1fr;
   }
 
-  .course-table th,
-  .course-table td {
-    padding: 0.5rem;
+  .degree {
+    padding: 1.5rem;
   }
 
-  #courses h3 {
-    font-size: 1.25rem;
+  .degree h3 {
+    font-size: 1.2rem;
   }
 
   /* Dot nav: smaller, tighter */
